@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CorpersMVC.Models.CorpersTable>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h1>Read</h1>
+<a class="btn btn-success" href="~/Corpers/Create"><span class="glyphicon glyphicon-edit"></span> Create</a>
+
+<table class="table table-striped">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.School)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discipline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateCode)
+        </th>
+        <th>
+
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.FirstName
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @item.School
+                </td>
+                <td>
+                    @item.Gender
+                </td>
+                <td>
+                    @item.Discipline
+                </td>
+                <td>
+                    @item.StateCode
+                </td>
+                <td>
+                    <a class="btn btn-info" href="~/Corpers/Update?id=@item.Id"><span class="glyphicon glyphicon-edit"></span> Update</a>
+                    <a class="btn btn-danger" href="~/Corpers/Delete?id=@item.Id"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+

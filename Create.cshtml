@@ -1,0 +1,53 @@
+﻿@model CorpersMVC.Models.CorpersTable
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Corpers", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <label>First Name</label>
+    <input class="form-control" type="text" name="FirstName" value="@Model.FirstName" />
+    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    <br />
+
+    <label>Last Name</label>
+    <input class="form-control" type="text" name="LastName" value="@Model.LastName" />
+    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+    <br />
+
+    <label>Email</label>
+    <input class="form-control" type="email" name="Email" value="@Model.Email" />
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    <br />
+
+    <label>Phone Number</label>
+    <input class="form-control" type="text" name="PhoneNumber" value="@Model.PhoneNumber" />
+    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+    <br />
+
+    <label>School</label>
+    <input class="form-control" type="text" name="School" value="@Model.School" />
+    @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
+    <br />
+
+    <label>Gender</label>
+    <input class="form-control" type="text" name="Gender" value="@Model.Gender" />
+    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+    <br />
+
+    <label>Disciplne</label>
+    <input class="form-control" type="text" name="Discipline" value="@Model.Discipline" />
+    @Html.ValidationMessageFor(model => model.Discipline, "", new { @class = "text-danger" })
+    <br />
+
+    <label>StateCode</label>
+    <input class="form-control" type="text" name="StateCode" value="@Model.StateCode" />
+    @Html.ValidationMessageFor(model => model.StateCode, "", new { @class = "text-danger" })
+    <br />
+
+    <button class="btn btn-info" name="Submit">Create</button>
+}
