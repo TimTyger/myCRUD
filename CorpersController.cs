@@ -11,7 +11,7 @@ namespace CorpersMVC.Controllers
     {
         private CorpersDBEntities Corpersdb = new CorpersDBEntities();
         // GET: Corpers
-        public ActionResult Read()
+        public ActionResult index()
         {
             return View(Corpersdb.CorpersTables.ToList());
         }
@@ -43,7 +43,7 @@ namespace CorpersMVC.Controllers
             {
                 Corpersdb.CorpersTables.Add(model);
                 Corpersdb.SaveChanges();
-                return RedirectToAction("Read");
+                return RedirectToAction("index");
             }
             return View("Create", model);
         }
@@ -81,7 +81,7 @@ namespace CorpersMVC.Controllers
             if (ModelState.IsValid)
             {
                 Corpersdb.SaveChanges();
-                return RedirectToAction("Read");
+                return RedirectToAction("index");
             }
             return View(model);
 
@@ -110,7 +110,7 @@ namespace CorpersMVC.Controllers
 
             Corpersdb.CorpersTables.Remove(corpers);
                 Corpersdb.SaveChanges();
-                return RedirectToAction("Read");
+                return RedirectToAction("index");
 
             
         }
